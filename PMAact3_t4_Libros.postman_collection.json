@@ -1,0 +1,97 @@
+{
+  "info": {
+    "name": "PMAact3_t4 - Libros API",
+    "description": "CRUD de Libros (Spring Boot) desplegado en VPS",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "https://165-22-6-118.sslip.io/api/libros",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Listar todos los libros",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}",
+          "host": ["{{base_url}}"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Buscar libro por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/1",
+          "host": ["{{base_url}}"],
+          "path": ["1"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear libro",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"El fantasma de la casa del lago\",\n  \"genero\": \"Terror\",\n  \"copiasDisponibles\": 5,\n  \"añoPublicacion\": 2020,\n  \"autor\": {5\n    \"id\": 20\n  }\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}",
+          "host": ["{{base_url}}"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Actualizar libro",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"Percy Jackson y el mar de los monstruos\",\n  \"genero\": \"Fantasía\",\n  \"copiasDisponibles\": 3,\n  \"añoPublicacion\": 2006,\n  \"autor\": {\n    \"id\": 29\n  }\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/29",
+          "host": ["{{base_url}}"],
+          "path": ["1"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Eliminar libro",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/39",
+          "host": ["{{base_url}}"],
+          "path": ["39"]
+        }
+      },
+      "response": []
+    }
+  ]
+}

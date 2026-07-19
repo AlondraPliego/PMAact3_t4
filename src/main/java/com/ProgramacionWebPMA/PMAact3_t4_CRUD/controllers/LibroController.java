@@ -78,8 +78,12 @@ public class LibroController {
     @GetMapping("/eliminar/{id}")
     public String eliminar(@PathVariable Integer id, RedirectAttributes redirectAttributes) {
         Libro libro = libroService.buscar(id);
+        if (libro == null) {
+            redirectAttributes.addFlashAttribute("error", "No se encontró el libro que intentas eliminar.");
+        } else {
             libroService.eliminar(id);
             redirectAttributes.addFlashAttribute("mensaje", "Libro eliminado correctamente.");
+        }
         return "redirect:/";
     }
 

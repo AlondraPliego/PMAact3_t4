@@ -52,7 +52,7 @@ public class LibroRestController {
     }
 
     // DELETE /api/libros/{id}
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{titulo}")
     public ResponseEntity<Void> eliminar(@PathVariable Integer id) {
         Libro existente = libroService.buscar(id);
         if (existente == null) {
