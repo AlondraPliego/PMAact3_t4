@@ -1,0 +1,6 @@
+spring.datasource.url=jdbc:mysql://localhost:3306/act3_crud
+spring.application.username=usuario
+spring.application.password=contraseña
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
+spring.thymeleaf.cache=false

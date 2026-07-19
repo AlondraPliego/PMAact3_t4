@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Libro</title>
+    <link rel="stylesheet" th:href="@{/css/form.css}">
+</head>
+<body>
+<div class="contenedor">
+    <h1 th:text="${libro.id} != null ? 'Editar Libro' : 'Agregar Nuevo Libro'"></h1>
+
+    <p th:if="${mensaje}" th:text="${mensaje}" class="alerta alerta-exito"></p>
+    <p th:if="${error}" th:text="${error}" class="alerta alerta-error"></p>
+
+    <form th:action="@{/guardar}" th:object="${libro}" method="post">
+
+        <input type="hidden" th:field="*{id}">
+
+        <label>Título:</label>
+        <input type="text" th:field="*{titulo}" placeholder="Ej: Cien años de soledad">
+
+        <label>Autor:</label>
+        <div class="autor-row">
+            <select th:field="*{autor.id}">
+                <option value="">-- Selecciona un autor --</option>
+                <option th:each="a : ${autores}"
+                        th:value="${a.id}"
+                        th:text="${a.nombre}">
+                </option>
+            </select>
+            <a th:href="@{/autores/nuevo}" class="link-secundario">+ Añadir</a>
+        </div>
+
+        <label>Género:</label>
+        <input type="text" th:field="*{genero}" placeholder="Ej: Realismo mágico">
+
+        <label>Copias disponibles:</label>
+        <input type="number" th:field="*{copiasDisponibles}" min="0">
+
+        <label>Año de publicación:</label>
+        <input type="number" th:field="*{añoPublicacion}" placeholder="Ej: 1967">
+
+        <button type="submit">Guardar</button>
+    </form>
+
+    <a th:href="@{/}" class="volver">← Volver a la lista</a>
+</div>
+</body>
+</html>

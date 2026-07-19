@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Nuevo Autor</title>
+    <link rel="stylesheet" th:href="@{/css/form.css}">
+</head>
+<body>
+<div class="contenedor">
+    <h1>Agregar Autor</h1>
+
+    <p th:if="${mensaje}" th:text="${mensaje}" class="alerta alerta-exito"></p>
+    <p th:if="${error}" th:text="${error}" class="alerta alerta-error"></p>
+
+    <form th:action="@{/autores/guardar}" th:object="${autor}" method="post">
+
+        <input type="hidden" th:field="*{id}">
+
+        <label>Nombre:</label>
+        <input type="text" th:field="*{nombre}" placeholder="Ej: Isabel Allende" required>
+
+        <label>Nacionalidad:</label>
+        <input type="text" th:field="*{nacionalidad}" placeholder="Ej: Chilena">
+
+        <label>Fecha de nacimiento:</label>
+        <input type="date" th:field="*{fechaNacimiento}">
+
+        <button type="submit">Guardar Autor</button>
+    </form>
+
+    <a th:href="@{/autores}" class="volver">Ver lista de autores</a>
+    <a th:href="@{/nuevo}" class="volver">Ir a agregar libro</a>
+</div>
+</body>
+</html>
