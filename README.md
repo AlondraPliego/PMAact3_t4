@@ -156,7 +156,7 @@ mvn spring-boot:run
 
 - **Repositorio de GitHub:** https://github.com/AlondraPliego/PMAact3_t4
 - **Proyecto corriendo en el VPS:** https://165-22-6-118.sslip.io
-- **Colección de Postman/Bruno:** 
+- **Colección de Postman/Bruno:**  https://github.com/AlondraPliego/PMAact3_t4/blob/main/PMAact3_t4_Libros.postman_collection.json
 ---
 
 ## Fuentes de Consulta
