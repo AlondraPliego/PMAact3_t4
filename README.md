@@ -164,3 +164,8 @@ mvn spring-boot:run
 - CodingNomads. (s. f.). Spring Data JPA Repositories for Efficient Database Operations. https://codingnomads.com/spring-data-jpa-repository
 - EdTics Academy. (2026, 29 marzo). Crear CRUD con Spring Boot, Java y MySQL en NetBeans | Paso a Paso 2026 [Vídeo]. YouTube. https://www.youtube.com/watch?v=uTwxbOnwB9k
 
+#### Nota:
+- Los libros que se continuen agregando comenzaran con el id: 37.
+- El id del primer libro es 20 "El fantasma de la casa del lago"
+
+
