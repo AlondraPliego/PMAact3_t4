@@ -1,0 +1,4 @@
+name: local
+variables:
+  - name: baseURL
+    value: https://165-22-6-118.sslip.io
