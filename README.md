@@ -159,26 +159,6 @@ mvn spring-boot:run
 - **Colección de Postman/Bruno:** 
 ---
 
-## Preguntas de Classroom
-
-**a) ¿Qué dos entidades elegiste y qué tipo de relación implementaste entre ellas?**
-
-Elegí las entidades **Libro** y **Autor**. La relación implementada es de **uno a 
-muchos / muchos a uno**: un Autor puede tener muchos libros asociados, pero cada 
-libro pertenece a un único autor. En el código, esto se representa con la anotación 
-`@ManyToOne` en la entidad `Libro`, usando `@JoinColumn(name ="autor_id")` para definir la llave foránea correspondiente. La relación se implementó de forma unidireccional, ya que el proyecto no requiere navegar desde un autor hacia su lista de libros directamente. 
-
-**b) ¿Qué es un Repository en Spring Data JPA y qué ventaja tiene sobre escribir tú mismo las consultas SQL?**
-
-Un Repository en Spring Data JPA es una interfaz que extiende `JpaRepository<T, ID>` lo que le permite a la aplicación interactuar con la base de datos sin necesidad de escribir manualmente las consultas SQL. Spring genera automáticamente la implementación en tiempo de ejecución, proporcionando métodos ya listos para usar como `findAll()`, `save()`, `findById()` y `deleteById()`. Además, permite crear consultas personalizadas con solo declarar el nombre del método siguiendo una 
-convención (por ejemplo, `findByTituloContaining(String titulo)`), y Spring Data JPA interpreta ese nombre y genera la consulta SQL correspondiente automáticamente. La principal ventaja sobre escribir SQL manualmente es que reduce la cantidad de codigo que se necesita para la realizacion de consultas, además de que simplifica las consultas con solo una o dos palabras porque lo que tampoco es dificil de recordar. 
-
-**c) ¿Por qué es una buena práctica separar la lógica en una capa de Service en vez de ponerla directamente en el Controller?**
-Servicios es la capa que encapsula la lógica de negocio  se comunica con la capa de datos.
-Separar la lógica en una capa de Service mantiene al Controller enfocado exclusivamente en su responsabilidad: recibir peticiones HTTP y decidir qué vista o respuesta devolver, sin mezclarse con las reglas de negocio ni con el acceso a 
-datos. 
-Esta separación también facilita la reutilización de la lógica de negocio, simplifica las pruebas unitarias al poder probar la lógica de negocio de forma aislada sin depender de la capa web, y hace el proyecto más fácil de mantener y escalar a futuro, ya que los cambios en las reglas de negocio no requieren tocar el Controller.
-
 ## Fuentes de Consulta
 - Bezkoder. (2023, 3 octubre). JPA One To Many example with Hibernate and Spring Boot - BezKoder. BezKoder. https://www.bezkoder.com/jpa-one-to-many/#google_vignette
 - CodingNomads. (s. f.). Spring Data JPA Repositories for Efficient Database Operations. https://codingnomads.com/spring-data-jpa-repository
